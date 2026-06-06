@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate Tech Plumbing & Renovators</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f7fa;
+color:#333;
+}
+
+/* NAVIGATION */
+
+nav{
+background:linear-gradient(90deg,#003366,#008080);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+color:white;
+font-size:32px;
+font-weight:bold;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ffae00;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(
+135deg,
+rgba(0,51,102,.85),
+rgba(0,128,128,.75),
+rgba(255,123,0,.4)
+),
+url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1600');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero-content{
+max-width:900px;
+animation:fadeUp 1.2s ease;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+text-shadow:0 4px 15px rgba(0,0,0,.4);
+}
+
+.hero p{
+font-size:1.3rem;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:linear-gradient(45deg,#ff7b00,#ffae00);
+color:white;
+text-decoration:none;
+border-radius:50px;
+margin:8px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(255,123,0,.4);
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(255,123,0,.6);
+}
+
+/* TRUST */
+
+.trust{
+background:linear-gradient(90deg,#008080,#00b3b3);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+/* STATS */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+padding:60px 20px;
+background:#f8fbff;
+}
+
+.stat-box{
+background:linear-gradient(135deg,#003366,#008080);
+color:white;
+padding:30px;
+border-radius:20px;
+min-width:220px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.stat-box:hover{
+transform:translateY(-10px);
+}
+
+.stat-box h3{
+font-size:2.2rem;
+margin-bottom:10px;
+}
+
+/* GENERAL */
+
+section{
+padding:80px 10%;
+text-align:center;
+}
+
+section h2{
+color:#003366;
+font-size:2.5rem;
+margin-bottom:20px;
+position:relative;
+display:inline-block;
+}
+
+section h2::after{
+content:'';
+display:block;
+width:70%;
+height:4px;
+margin:10px auto;
+background:linear-gradient(90deg,#ff7b00,#00c2ff);
+border-radius:20px;
+}
+
+/* ABOUT */
+
+#about p{
+max-width:900px;
+margin:auto;
+font-size:1.1rem;
+line-height:1.8;
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+border-top:6px solid #ff7b00;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-top:6px solid #008080;
+}
+
+.card h3{
+color:#003366;
+margin-bottom:10px;
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.project-card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+}
+
+.project-card h3{
+color:#008080;
+margin-bottom:10px;
+}
+
+/* CONTACT */
+
+#contact{
+background:#eef7ff;
+}
+
+.contact-box{
+background:white;
+max-width:700px;
+margin:auto;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.phone{
+font-size:2rem;
+font-weight:bold;
+color:#008080;
+margin:20px 0;
+}
+
+/* FOOTER */
+
+footer{
+background:linear-gradient(90deg,#001f3f,#003366,#008080);
+color:white;
+text-align:center;
+padding:25px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+section h2{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Climate Tech</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Fast, Reliable & Professional Plumbing Services</h1>
+
+<p>
+Trusted by homeowners and businesses across Nairobi for plumbing,
+renovations, maintenance and emergency repairs.
+</p>
+
+<a href="tel:0720219802" class="btn">Call Now</a>
+<a href="https://wa.me/254720219802" class="btn">WhatsApp Us</a>
+
+</div>
+
+</section>
+
+<section class="trust">
+
+<h2 style="color:white;">Trusted by Customers Across Nairobi</h2>
+
+<p>
+⭐⭐⭐⭐⭐ 4.9 Google Rating | 35+ Reviews | Fast Response Times
+</p>
+
+</section>
+
+<section class="stats">
+
+<div class="stat-box">
+<h3>35+</h3>
+<p>Happy Clients</p>
+</div>
+
+<div class="stat-box">
+<h3>4.9★</h3>
+<p>Google Rating</p>
+</div>
+
+<div class="stat-box">
+<h3>24/7</h3>
+<p>Emergency Support</p>
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>About Climate Tech</h2>
+
+<p>
+Climate Tech Plumbing & Renovators is a trusted plumbing and renovation
+service provider located along Thika Road, Nairobi. Known for reliability,
+professionalism, honest pricing and quality workmanship, the company has
+built a strong reputation through exceptional customer service and timely project completion.
+</p>
+
+</section>
+
+<section id="services">
+
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Leak Repairs</h3>
+<p>Fast diagnosis and repair of plumbing leaks.</p>
+</div>
+
+<div class="card">
+<h3>Drain Cleaning</h3>
+<p>Professional drain cleaning and blockage removal.</p>
+</div>
+
+<div class="card">
+<h3>Bathroom Renovations</h3>
+<p>Modern bathroom upgrades and remodeling.</p>
+</div>
+
+<div class="card">
+<h3>Pipe Installation</h3>
+<p>Residential and commercial plumbing systems.</p>
+</div>
+
+<div class="card">
+<h3>Emergency Plumbing</h3>
+<p>Rapid response for urgent plumbing problems.</p>
+</div>
+
+<div class="card">
+<h3>Maintenance Services</h3>
+<p>Routine maintenance to keep systems running smoothly.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>Recent Projects</h2>
+
+<div class="projects">
+
+<div class="project-card">
+<h3>Residential Plumbing</h3>
+<p>Home plumbing installations and repairs.</p>
+</div>
+
+<div class="project-card">
+<h3>Bathroom Upgrades</h3>
+<p>Modern renovation projects with quality finishes.</p>
+</div>
+
+<div class="project-card">
+<h3>Leak Detection</h3>
+<p>Fast identification and repair of hidden leaks.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<div class="contact-box">
+
+<p>Need a trusted plumber today?</p>
+
+<div class="phone">
+0720 219 802
+</div>
+
+<a href="tel:0720219802" class="btn">Call Now</a>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Climate Tech Plumbing & Renovators. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
